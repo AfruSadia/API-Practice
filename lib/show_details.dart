@@ -19,9 +19,11 @@ class _DetailsState extends State<Details> {
         child: Column(
           children: [
             SizedBox(
-                height: 200,
-                width: double.infinity,
-                child: Image.network(widget.value.image!)),
+              height: 200,
+              width: double.infinity,
+              child: //Image.network(widget.value.image!)
+                  Text(widget.value.id.toString()),
+            ),
           ],
         ),
       ),
