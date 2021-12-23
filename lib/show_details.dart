@@ -15,18 +15,13 @@ class _DetailsState extends State<Details> {
       appBar: AppBar(
         title: const Text("New page"),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            SizedBox(
-              height: 200,
-              width: double.infinity,
-              child: //Image.network(widget.value.image!)
-                  Text(widget.value.id.toString()),
-            ),
-          ],
-        ),
-      ),
+      body: ListView.builder(
+          itemCount: widget.value.children!.length,
+          itemBuilder: (context, index) {
+            return Card(
+              child: Text(widget.value.children![index].name.toString()),
+            );
+          }),
     );
   }
 }

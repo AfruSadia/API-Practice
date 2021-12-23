@@ -52,19 +52,27 @@ class _ApiPracticeState extends State<ApiPractice> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (builder) =>
-                                        Details(modelList![index])));
+                                        Details(modelList[index])));
                           });
                         },
                         child: Container(
-                          height: 50,
-                          child: Center(
-                              child: Text(
-                            snapshot.data![index].name.toString(),
-                            style: const TextStyle(
-                                color: Colors.redAccent,
-                                fontWeight: FontWeight.bold),
-                          )),
-                        ),
+                            height: 50,
+                            child: Column(
+                              children: [
+                                // Text("Children of He:",
+                                //     style: const TextStyle(
+                                //         color: Colors.redAccent,
+                                //         fontWeight: FontWeight.bold)),
+                                Center(
+                                    child: Text(
+                                  snapshot.data![index].name.toString(),
+                                  style: const TextStyle(
+                                      color: Colors.redAccent,
+                                      fontWeight: FontWeight.bold),
+                                )),
+                                // Text(snapshot.data![0].children![index].name.toString())
+                              ],
+                            )),
                       ),
                     );
                   });
